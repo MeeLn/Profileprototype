@@ -1,4 +1,4 @@
- var icon = document.getElementById("theme-icon");
+var icon = document.getElementById("theme-icon");
 var box = document.getElementById("box");
 var facebook = document.getElementById("facebook");
 var twitter = document.getElementById("twitter");
@@ -8,6 +8,7 @@ var link1 = document.getElementById("icon-link1");
 var link2 = document.getElementById("icon-link2");
 var link4 = document.getElementById("icon-link4");
 var link5 = document.getElementById("icon-link5");
+var img = document.getElementById("img");
 if(localStorage.getItem("theme")=="null"){
     localStorage.setItem("theme","dark");
 }
@@ -15,8 +16,17 @@ if(localStorage.getItem("theme")=="null"){
 let localData = localStorage.getItem("theme");
 
 if(localData=="light"){
-    icon.src="../assets/icons/moon.png";
-    icon.style.backgroundColor="rgba(17, 25, 235, 0.4)";
+    icon.src="../assets/icons/sun1.png";
+    icon.onmouseover=function() {
+        icon.src="../assets/icons/moon1.png";
+        icon.style.backgroundColor="rgba(17, 25, 235, 0.4)";
+        icon.style.transition = "all 0.5s";
+    };
+    icon.onmouseout=function() {
+        icon.src="../assets/icons/sun1.png";
+        icon.style.backgroundColor="transparent";
+        icon.style.transition = "all 0.5s";
+    };
     box.style.backgroundColor="rgba(17, 25, 235, 0.167)";
     facebook.style.color="#3B5999";
     twitter.style.color="#46C1F6";
@@ -55,8 +65,17 @@ if(localData=="light"){
     document.body.classList.add("light-theme");
 }
 else if(localData=="dark"){
-    icon.src="../assets/icons/sun.png";
-    icon.style.backgroundColor="rgba(0,0,0,0.6)";
+    icon.src="../assets/icons/moon.png";
+    icon.onmouseover=function() {
+        icon.src="../assets/icons/sun.png";
+        icon.style.backgroundColor="rgba(0,0,0,0.6)";
+        icon.style.transition = "all 0.5s";
+    };
+    icon.onmouseout=function() {
+        icon.src="../assets/icons/moon.png";
+        icon.style.backgroundColor="transparent";
+        icon.style.transition = "all 0.5s";
+    };
     box.style.backgroundColor="rgba(0, 0, 0, 0.6)";
     facebook.style.color="black";
     twitter.style.color="black";
@@ -98,8 +117,17 @@ else if(localData=="dark"){
 icon.onclick = function(){
     document.body.classList.toggle("light-theme");
     if(document.body.classList.contains("light-theme")){
-        icon.src="../assets/icons/moon.png";
-        icon.style.backgroundColor="rgba(17, 25, 235, 0.4)";
+        icon.src="../assets/icons/sun1.png";
+        icon.onmouseover=function() {
+            icon.src="../assets/icons/moon1.png";
+            icon.style.backgroundColor="rgba(17, 25, 235, 0.4)";
+            icon.style.transition = "all 0.5s";
+        };
+        icon.onmouseout=function() {
+            icon.src="../assets/icons/sun1.png";
+            icon.style.backgroundColor="transparent";
+            icon.style.transition = "all 0.5s";
+        };
         box.style.backgroundColor="rgba(17, 25, 235, 0.167)";
         facebook.style.color="#3B5999";
         twitter.style.color="#46C1F6";
@@ -137,8 +165,18 @@ icon.onclick = function(){
         document.body.style.backgroundImage = "url('../assets/img/back.jpg')";
         localStorage.setItem("theme","light");
     }else{
-        icon.src="../assets/icons/sun.png";
-        icon.style.backgroundColor="rgba(0,0,0,0.6)";
+        icon.src="../assets/icons/moon.png";
+        icon.onmouseover=function() {
+            icon.src="../assets/icons/sun.png";
+
+            icon.style.backgroundColor="rgba(0,0,0,0.6)";
+            icon.style.transition = "all 0.5s";
+        };
+        icon.onmouseout=function() {
+            icon.src="../assets/icons/moon.png";
+            icon.style.backgroundColor="transparent";
+            icon.style.transition = "all 0.5s";
+        };
         box.style.backgroundColor="rgba(0, 0, 0, 0.6)";
         facebook.style.color="black";
         twitter.style.color="black";
