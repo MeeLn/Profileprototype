@@ -32,6 +32,8 @@ body{
   width: 200px;
   height: 200px;
   display: inline;
+  padding: 1px;
+  border: 1px dashed var(--primary-color);
 }
 
 :root{
@@ -55,9 +57,14 @@ body{
 .theme-button #theme-icon{
   cursor: pointer;
   border-radius: 50%;
+  display:flex;
   width: 25px;
   height: 25px;
-  background-color: rgba(0,0,0,0.4);
+}
+
+.theme-button #theme-icon:hover{
+  src: url(../assets/icons/moon.png);
+  transition-duration: 1s;
 }
 
 .box h1{
@@ -212,7 +219,8 @@ body{
     background: rgba(0, 0, 0, 0.6);
     margin-top: 28%;
     padding-top: 26%;
-    transform: translate(0%,0%);
+    transform: translateX(0%);
+    display: block;
   }
   .wrapper{
     width: auto;
