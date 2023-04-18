@@ -16,6 +16,7 @@ if(localStorage.getItem("theme")=="null"){
 let localData = localStorage.getItem("theme");
 
 if(localData=="light"){
+    img.style.border="1px dashed rgb(0, 255, 255)";
     img.src="../assets/img/profile1.jpg";
     icon.src="../assets/icons/sun1.png";
     icon.onmouseover=function() {
@@ -66,6 +67,7 @@ if(localData=="light"){
     document.body.classList.add("light-theme");
 }
 else if(localData=="dark"){
+    img.style.border="none";
     img.src="../assets/img/profile2.png";
     icon.src="../assets/icons/moon.png";
     icon.onmouseover=function() {
@@ -119,6 +121,7 @@ else if(localData=="dark"){
 icon.onclick = function(){
     document.body.classList.toggle("light-theme");
     if(document.body.classList.contains("light-theme")){
+        img.style.border="1px dashed rgb(0, 255, 255)";
         img.src="../assets/img/profile1.jpg";
         icon.src="../assets/icons/sun1.png";
         icon.onmouseover=function() {
@@ -168,6 +171,7 @@ icon.onclick = function(){
         document.body.style.backgroundImage = "url('../assets/img/back.jpg')";
         localStorage.setItem("theme","light");
     }else{
+        img.style.border="none";
         img.src="../assets/img/profile2.png";
         icon.src="../assets/icons/moon.png";
         icon.onmouseover=function() {
