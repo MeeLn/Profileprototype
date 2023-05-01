@@ -92,12 +92,13 @@ body{
   padding-top: 15px;
 }
 
-a{
+a:link, a:visited, a:active{
   text-decoration: none;
   color:var(--primary-color);
 }
 
 a:hover{
+  color:var(--secondary-color);
   text-decoration: underline;
 }
 
